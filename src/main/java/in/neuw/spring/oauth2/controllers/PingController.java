@@ -23,7 +23,7 @@ public class PingController {
     @GetMapping("/api/upstream/ping")
     public Ping upstreamPing() {
         var now = LocalDateTime.now();
-        log.info("Pinging upstream ping at {}", now);
+        log.info("upstream ping at {}", now);
         return restClient.get().uri("/api/downstream/ping").retrieve().body(Ping.class);
     }
 
